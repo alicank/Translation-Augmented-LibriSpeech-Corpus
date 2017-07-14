@@ -111,17 +111,17 @@ python3 TA-LibriSpeech.py train ./folder_output_train --size 1200 --verbose sort
 
 **Arguments**
 
--Positional Arguments
-	-action: train/dev/test (When the action is dev/test from 200 sentences that are manually annotated, only sentences that are well aligned are extracted)
-	-output_folder: Path to the output folder where the corpus is to be extracted
+- Positional Arguments
+	- action: train/dev/test (When the action is dev/test from 200 sentences that are manually annotated, only sentences that are well aligned are extracted)
+	- output_folder: Path to the output folder where the corpus is to be extracted
 
--Optional Arguments
-	--**size**: (minutes) maximum Limit to be extracted
-	--sort {None,hunAlign,CNG,LM,CNGLM}: Sorts the corpus before extracting using the selected score. Default is CNG
-	-v: Verbose mode
-	--maxSegDuration : Maximum duration of a speech segments
-	--minSegDuration: Minimum duration of a speech segments
-	--extract: Copies sound files to the output folder along with audio_filename,metadata,transcription and translation files
+- Optional Arguments
+	- **size**: (minutes) maximum Limit to be extracted
+	- sort {None,hunAlign,CNG,LM,CNGLM}: Sorts the corpus before extracting using the selected score. Default is CNG
+	- v: Verbose mode
+	- maxSegDuration : Maximum duration of a speech segments
+	- minSegDuration: Minimum duration of a speech segments
+	- extract: Copies sound files to the output folder along with audio_filename,metadata,transcription and translation files
 
 
 
