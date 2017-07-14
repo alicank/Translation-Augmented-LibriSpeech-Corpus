@@ -78,21 +78,8 @@ Corpus is provided with diffrent tables containing useful information provided w
 - Table csv,clean100,other: Metadata completion for books provided with LibriSpeech project.
 - Table nosLivres: some french ebook links gathered from nosLivres.net
 
-.. code:: python
-
-    # create SpeechCoco object
-    db = SpeechCoco(train_2014.sqlite3, train_translate.sqlite3, verbose=True)
-
-    # filter captions (returns Caption Objects)
-    captions = db.filterCaptions(gender="Male", nationality="US", speed=0.9, text='%keys%')
-    for caption in captions:
-        print('\n{}\t{}\t{}\t{}\t{}\t{}\t\t{}'.format(caption.imageID,
-                                                      caption.captionID,
-                                                      caption.speaker.name,
-                                                      caption.speaker.nationality,
-                                                      caption.speed,
-                                                      caption.filename,
-                                                      caption.text))
+.. code:: sql
+    SELECT * FROM Alignments
 
 
 
