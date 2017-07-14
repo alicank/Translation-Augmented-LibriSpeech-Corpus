@@ -9,8 +9,7 @@ This project is an extension of LibriSpeech ASR Corpus which is a corpus of appr
 Speech recordings and source texts are originally from `Gutenberg Project
 <http://www.gutenberg.org>`_ which is a digital library of public domain books read by volunteers. We gathered open domain ebooks in French and aligned chapters from LibriSpeech project with the chapters of translated e-books. Furthermore, we aligned the transcriptions with their respective translations in order to provide a corpus of speech recordings aligned with their translations. Our corpus is licenced under a `Creative Commons Attribution 4.0 License
 <https://creativecommons.org/licenses/by/4.0/legalcode>`_ 
-External hyperlinks, like `Python
-<http://www.python.org/>`_.
+
 
 Project Structure
 =================
