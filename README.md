@@ -21,31 +21,16 @@ This corpus is composed of three sections:
 - HTML alignment visualisation interface : HTML visualisation for textual alignments with audio files avaliable to listen
 - Alignments folder: All of the processing steps: pre-processing, alignment, forced transcriptions, forced alignments, etc.
 
-
 - TA LibriSpeech Corpus(~26GB)
 
-    - **audio_files/** : folder contains ~130.000 audio segments aligned with their translations
-        - book id/
-		    - Chapter id/
-       		    - book_id-chapter_id-sentence_number.wav
-				- reader_id-chapter_id-sentence_number.wav ** *if the corpus comes from the dev/test pool of LibriSpeech*
-              
-       
-    - **Alignments/** : Folder contains processing steps used in alignments
-	*language prefix convention: ls is used for english, lc is used for french*
-    	- book id/
-    		- en/ Contains nltk processing steps for each chapter for a given book
-				-chapter_id/ *Contains an individual chapter*
-  					- raw.txt *Raw text file of a chapter*
-					- raw.para *p tags added to raw text files*
-					- raw.sent *NLTK sentence split files, 1 sentence per line*
-					- raw.stem *NLTK stemmer applied to sentence split file*
-					- en.tokens *File contains tokens of the chapter*
-			- fr/ Contains nltk processing steps for each chapter for a given book
-				.
-	
+	- **audio_files/** : folder contains ~130.000 audio segments aligned with their translations
+		- book id/
+			- Chapter id/
+				- book_id-chapter_id-sentence_number.wav
+				- reader_id-chapter_id-sentence_number.wav ** if the corpus comes from the dev/test pool of LibriSpeech
+
 	- **Alignments/** : Folder contains processing steps used in different alignment stages
-    	-chapter_id/
+		- chapter_id/
 			-stem_ls,stem_lc *Chapters to be aligned in their stemmed forms*
 			-raw*.txt *hunAlign alignment files*
 			-diff_ls,diff_lc.html *Google's Diff Patch Match output between original NLTK sentence split and stemmed files*
@@ -56,10 +41,26 @@ This corpus is composed of three sections:
 			-transcriptions_aligned.txt **File to be used in forced Alignment**
 			-final.txt *Contains final alignments to be uploaded to the database in tabulated text form*
 			-scores.txt *hunAlign sentence match confidence values for each sentence*
-    		-ls_book_id.txt (Gutenberg original text)
-    		-lc_book_id.format (pdf,epub,txt,...)
-    		-lc_book_id.htmlz
 
+	- **en/** : Folder contains preProcessing steps for english used before alignment
+		- book id/ 	
+			-chapter_id/ *Contains an individual chapter*
+				- raw.txt *Raw text file of a chapter*
+				- raw.para *p tags added to raw text files*
+				- raw.sent *NLTK sentence split files, 1 sentence per line*
+				- raw.stem *NLTK stemmer applied to sentence split file*
+				- en.tokens *File contains tokens of the chapter*
+	- **fr/** Contains nltk processing steps for each chapter for a given book
+
+	- **speechcoco_API/**
+		- speechcoco/
+			- __init__.py
+			- speechcoco.py
+			- setup.py
+		
+	- ls_book_id.txt (Gutenberg original text)
+	- lc_book_id.format (pdf,epub,txt,...)
+	- lc_book_id.htmlz
 
 
 
