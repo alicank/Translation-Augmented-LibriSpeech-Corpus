@@ -79,11 +79,11 @@ Corpus is provided with diffrent tables containing useful information provided w
 - Table nosLivres: some french ebook links gathered from nosLivres.net
 
 Following SQL query could be used to gather most of the useful alignment information:
-.. code:: sql
-    SELECT * FROM alignments 
-    JOIN (alignments_excluded JOIN alignments_scores USING(audio_filename) ) 
-    USING ( audio_filename ) WHERE excluded != "True"  
-    ORDER BY alignment_score DESC
+.. code-block:: sql
+	SELECT * FROM alignments
+	    JOIN (alignments_excluded JOIN alignments_scores USING(audio_filename) )
+	    USING ( audio_filename ) WHERE excluded != "True"
+	    ORDER BY alignment_score DESC
 
 
 
