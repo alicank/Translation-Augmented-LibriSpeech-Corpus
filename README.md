@@ -44,7 +44,7 @@ The repository is organized as follows:
 
 	- **en/** : Folder contains preProcessing steps for english chapters used before alignment
 			
-		-chapter_id/ *Contains an individual chapter*
+		- chapter_id/ *Contains an individual chapter*
 			- raw.txt *Raw text file of a chapter*
 			- raw.para *p tags added to raw text files*
 			- raw.sent *NLTK sentence split files, 1 sentence per line*
@@ -65,27 +65,34 @@ Database
 
 Corpus is provided with diffrent tables containing useful information provided with the corpus. Database structure is organized as follows:
 
-** Alignment Tables **
-- Table ** Alignments **: Table containing transcriptions, textual alignments and name of the audio file associated with a given alignment. Each row corresponds to a sentence which is aligned
+**Alignment Tables**
+- Table **Alignments**: Table containing transcriptions, textual alignments and name of the audio file associated with a given alignment. Each row corresponds to a sentence which is aligned
 - Table audio: Table that contains duration of each speech segment(seconds)
 - Table alignments_evaluations: Manually annotated 200 sentences from the corpus
 - Table alignments_excluded: Table used to mark sentences to be excluded in the corpus.
 - Table alignments_gTranslate: automatic translation output from Google translate for each segment (transcriptions)
 - Table alignments_scores: different score calculations provided with the corpus which could be used to sort the corpus from highest scores to the lowest
 
-** Metadata Tables **
+**Metadata Tables**
 - Table **librispeech**: This table contains all of the book from LibriSpeech project for which a downloadable link could be found (might be a dead/wrong link eventually)
 - Table csv,clean100,other: Metadata completion for books provided with LibriSpeech project.
 - Table nosLivres: some french ebook links gathered from nosLivres.net
 
 Following SQL query could be used to gather most of the useful alignment information:
 ```
-    SELECT * FROM alignments
+	SELECT * FROM alignments
     JOIN (alignments_excluded JOIN alignments_scores USING(audio_filename) )
     USING ( audio_filename ) WHERE excluded != "True"
     ORDER BY alignment_score DESC
 
 ```
+
+Script
+======
+
+We developed a script that could be used to interact with the database for extracting train,dev,test datas to an output folder.
+**TA-LibriSpeech.py** Module Description:
+
 
 	
 
