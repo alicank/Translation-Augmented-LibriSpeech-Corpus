@@ -65,7 +65,3 @@ Database Structure
 
 Corpus is provided with diffrent tables containing useful information provided with the corpus. Database structure is organized as follows:
 
-==============   ============
-**Alignments**   sentence_num
-------------     ------------
-For example      this is an ex
