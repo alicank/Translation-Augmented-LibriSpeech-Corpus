@@ -103,5 +103,9 @@ We developed a script that could be used to interact with the database for extra
                          action output
 
 
-	
+**Example use**:
+
+```
+python3 TA-LibriSpeech.py train ./folder_output_train --size 1200 --verbose sort CNG --maxSegDuration 35.0 --minSegDuration 3.0 --extract
+```
 
