@@ -74,7 +74,7 @@ Corpus is provided with diffrent tables containing useful information provided w
 - Table alignments_scores: different score calculations provided with the corpus which could be used to sort the corpus from highest scores to the lowest
 
 **Metadata Tables**
-- Table **librispeech**: This table contains all of the book from LibriSpeech project for which a downloadable link could be found (might be a dead/wrong link eventually)
+- Table **librispeech**: This table contains all of the book from LibriSpeech project for which a downloadable link could be found (might be a dead/wrong links eventually)
 - Table csv,clean100,other: Metadata completion for books provided with LibriSpeech project.
 - Table nosLivres: some french ebook links gathered from nosLivres.net
 
