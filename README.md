@@ -78,8 +78,10 @@ Corpus is provided with diffrent tables containing useful information provided w
 - Table csv,clean100,other: Metadata completion for books provided with LibriSpeech project.
 - Table nosLivres: some french ebook links gathered from nosLivres.net
 
-.. code:: sql
-    SELECT * FROM Alignments
+.. code:: python
+    #This is an example
+    with open(fh,"r",encoding="utf8") as fh:
+    
 
 
 
