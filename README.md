@@ -22,42 +22,23 @@ This corpus is composed of three sections:
 - Alignments folder: All of the processing steps: pre-processing, alignment, forced transcriptions, forced alignments, etc.
 
 
-- TA LibriSpeech Corpus(~26GB)
+- CORPUS-MSCOCO (~75GB)
 
-    - **audio_files/** : folder contains ~130.000 audio segments aligned with their translations
-       - book id/
-	- Chapter id/
-       		- book_id-chapter_id-sentence_number.wav
-		- reader_id-chapter_id-sentence_number.wav ** if the corpus comes from the dev/test pool of LibriSpeech
-              
+    - **train2014/** : folder contains 413,915 captions
+       - json/
+       - wav/
+       - translations/
+              - train_en_ja.txt
+              - train_translate.sqlite3       
+       - train_2014.sqlite3
        
-    - **Alignments/** : Folder contains processing steps used in alignments
-	*language prefix convention: ls is used for english, lc is used for french*
-       - book id/
-       	- en/ Contains nltk processing steps for each chapter for a given book
-	  -chapter_id/ *Contains an individual chapter*
-          	- raw.txt *Raw text file of a chapter*
-		- raw.para *p tags added to raw text files*
-		- raw.sent *NLTK sentence split files, 1 sentence per line*
-		- raw.stem *NLTK stemmer applied to sentence split file*
-		- en.tokens *File contains tokens of the chapter*
-       	- fr/ Contains nltk processing steps for each chapter for a given book
-	  ...(Same as en/)
-	- Alignments/	
-              - chapter_id/
-              	-stem_ls,stem_lc *Chapters to be aligned in their stemmed forms*
-		-raw*.txt *hunAlign alignment files*
-		-diff_ls,diff_lc.html *Google's Diff Patch Match output between original NLTK sentence split and stemmed files*
-		-reversed_stem*.txt *Chapters aligned with tags and in their original sentence forms*
-		-hyp,ref.txt *Hypothesis and reference files used with mwerAlign*
-		-forcedAlignment*.txt *Fix of the resegmentation with speech transcriptions and sentence splits with mwerAlign*
-		-original.transcpt *Transcription file from LibriSpeech Project*
-		-transcriptions_aligned.txt **File to be used in forced Alignment**
-		-final.txt *Contains final alignments to be uploaded to the database in tabulated text form*
-		-scores.txt *hunAlign sentence match confidence values for each sentence*
-       - ls_book_id.txt (Gutenberg original text)
-       - lc_book_id.format (pdf,epub,txt,...)
-       - lc_book_id.htmlz
+    - **val2014/** : folder contains 202,520 captions
+       - json/
+       - wav/
+       - translations/
+              - train_en_ja.txt
+              - train_translate.sqlite3 
+       - val_2014.sqlite3
 
     - **speechcoco_API/**
            - speechcoco/
