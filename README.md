@@ -90,8 +90,17 @@ Following SQL query could be used to gather most of the useful alignment informa
 Script
 ======
 
-We developed a script that could be used to interact with the database for extracting train,dev,test datas to an output folder.
+We developed a script that could be used to interact with the database for extracting train,dev,test data to an output folder.
 **TA-LibriSpeech.py** Module Description:
+
+.. code:: console
+
+	usage: TA-LibriSpeech.py [-h] [--size SIZE] [--listTrain LISTTRAIN]
+                         [--useEvaluated USEEVALUATED]
+                         [--sort {None,hunAlign,CNG}] [-v]
+                         [--maxSegDuration MAXSEGDURATION]
+                         [--minSegDuration MINSEGDURATION] [--extract]
+                         action output
 
 
 	
