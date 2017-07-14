@@ -30,16 +30,26 @@ This corpus is composed of three sections:
 				- reader_id-chapter_id-sentence_number.wav ** if the corpus comes from the dev/test pool of LibriSpeech
 
 	- **Alignments/** : Folder contains processing steps used in different alignment stages
-		chapter_id/
-			-raw.txt
+		- chapter_id/
+			- stem_ls,stem_lc *Chapters to be aligned in their stemmed forms*
+			- raw*.txt *hunAlign alignment files*
+			- diff_ls,diff_lc.html *Google's Diff Patch Match output between original NLTK sentence split and stemmed files*
+			- reversed_stem*.txt *Chapters aligned with tags and in their original sentence forms*
+			- hyp,ref.txt *Hypothesis and reference files used with mwerAlign*
+			- forcedAlignment*.txt *Fix of the resegmentation with speech transcriptions and sentence splits with mwerAlign*
+			- original.transcpt *Transcription file from LibriSpeech Project*
+			- transcriptions_aligned.txt **File to be used in forced Alignment**
+			- final.txt *Contains final alignments to be uploaded to the database in tabulated text form*
+			- scores.txt *hunAlign sentence match confidence values for each sentence*
+
 	- **en/** : Folder contains preProcessing steps for english used before alignment
-		- book id/ 	
-			-chapter_id/ *Contains an individual chapter*
-				- raw.txt *Raw text file of a chapter*
-				- raw.para *p tags added to raw text files*
-				- raw.sent *NLTK sentence split files, 1 sentence per line*
-				- raw.stem *NLTK stemmer applied to sentence split file*
-				- en.tokens *File contains tokens of the chapter*
+			
+		-chapter_id/ *Contains an individual chapter*
+			- raw.txt *Raw text file of a chapter*
+			- raw.para *p tags added to raw text files*
+			- raw.sent *NLTK sentence split files, 1 sentence per line*
+			- raw.stem *NLTK stemmer applied to sentence split file*
+			- en.tokens *File contains tokens of the chapter*
 	- **fr/** Contains nltk processing steps for each chapter for a given book
 
 	- **speechcoco_API/**
