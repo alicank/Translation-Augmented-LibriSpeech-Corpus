@@ -1,5 +1,3 @@
-
-
 Translation-Augmented-LibriSpeech-Corpus
 ========================================
 
@@ -13,13 +11,15 @@ Speech recordings and source texts are originally from `Gutenberg Project
 
 Project Structure
 =================
-*Folder name convention corresponds to book id's from LibriSpeech Project and Gutenberg Project. For example: folder 11 would correspond
-to "Alice's Adventures in Wonderland by Lewis Carroll" at both Gutenberg and LibriSpeech Projects. *
+
+*Folders name convention corresponds to book id's from LibriSpeech and Gutenberg projects. For example folder 11 would correspond to "Alice's Adventures in Wonderland by Lewis Carroll" at these both projects*
 
 This corpus is composed of three sections:
 - Audio Files: Resegmented audio files for each book id in the project
 - HTML alignment visualisation interface : HTML visualisation for textual alignments with audio files avaliable to listen
 - Alignments folder: All of the processing steps: pre-processing, alignment, forced transcriptions, forced alignments, etc.
+
+The repository is organized as follows:
 
 - TA LibriSpeech Corpus(~26GB)
 
@@ -42,7 +42,7 @@ This corpus is composed of three sections:
 			- final.txt *Contains final alignments to be uploaded to the database in tabulated text form*
 			- scores.txt *hunAlign sentence match confidence values for each sentence*
 
-	- **en/** : Folder contains preProcessing steps for english used before alignment
+	- **en/** : Folder contains preProcessing steps for english chapters used before alignment
 			
 		-chapter_id/ *Contains an individual chapter*
 			- raw.txt *Raw text file of a chapter*
@@ -50,20 +50,35 @@ This corpus is composed of three sections:
 			- raw.sent *NLTK sentence split files, 1 sentence per line*
 			- raw.stem *NLTK stemmer applied to sentence split file*
 			- en.tokens *File contains tokens of the chapter*
-	- **fr/** Contains nltk processing steps for each chapter for a given book
 
-	- **speechcoco_API/**
-		- speechcoco/
-			- __init__.py
-			- speechcoco.py
-			- setup.py
+	- **fr/** Folder contains preProcessing steps for french chapters used before alignment
+	
+	- **db/** Folder contains the database containing alignments, metadata and other information
+		-TA-LibriSpeechCorpus.sqlite3
 
 	- ls_book_id.txt (Gutenberg original text)
 	- lc_book_id.format (pdf,epub,txt,...)
 	- lc_book_id.htmlz
 
+Database Structure
+==================
 
+Corpus is provided with diffrent tables containing useful information provided with the corpus. Database structure is organized as follows:
 
-
-
-
+** Alignments **
+========== =========== =========== =========== =========== =========== =========== =========== =========== =========== ===========
+**Voices**     Amanda     Bronwen     Bruce     Elizabeth     Jenny      Judith      Paul         Phil       William      gTTS 
+---------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- -----------
+Amanda        38,28       60,80       66,10       62,00       53,30       61,67       69,43       68,93       70,41       69,67
+Bronwen       60,80       37,39       61,75       52,89       52,84       57,34       57,06       62,23       72,19       63,77
+**Voices**     Amanda     Bronwen     Bruce     Elizabeth     Jenny      Judith      Paul         Phil       William      gTTS 
+---------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- -----------
+Elizabeth     62,00       52,89       59,34       34,04       53,17       56,13       58,87       62,44       71,83       65,27
+**Voices**     Amanda     Bronwen     Bruce     Elizabeth     Jenny      Judith      Paul         Phil       William      gTTS 
+---------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- -----------
+Judith        61,67       57,34       64,65       56,13       56,00       47,49       64,94       67,59       72,08       64,16
+Paul          69,43       57,06       57,23       58,87       61,02       64,94       40,54       60,37       73,73       68,41
+Phil          68,93       62,23       54,83       62,44       60,05       67,59       60,37       45,57       79,60       75,38
+William       70,41       72,19       77,02       71,83       69,21       72,08       73,73       79,60       46,47       76,74
+gTTS          69,67       63,77       69,71       65,27       62,28       64,16       68,41       75,38       76,74       45,77
+========== =========== =========== =========== =========== =========== =========== =========== =========== =========== ===========
