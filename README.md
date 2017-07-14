@@ -65,3 +65,9 @@ Database Structure
 
 Corpus is provided with diffrent tables containing useful information provided with the corpus. Database structure is organized as follows:
 
+- Table ** Alignments **: Table containing transcriptions, textual alignments and name of the audio file associated with a given alignment. Each row corresponds to a sentence which is aligned
+- Table audio: Table that contains duration of each speech segment(seconds)
+- Table alignments_evaluations: Manually annotated 200 sentences from the corpus
+- Table alignments_excluded: Table used to mark sentences to be excluded in the corpus.
+- Table alignments_gTranslate: automatic translation output from Google translate for each segment (transcriptions)
+- Table alignments_scores: different score calculations provided with the corpus which could be used to sort the corpus from highest scores to the lowest
