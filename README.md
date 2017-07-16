@@ -8,7 +8,6 @@ Speech recordings and source texts are originally from [Gutenberg Project](https
 
 Project Structure
 =================
-//247 books, 1408 chapters, 131.395, 250 hours sentences aligned
 
 *Folders name convention corresponds to book id's from LibriSpeech and Gutenberg projects. For example id **11** corresponds to "Alice's Adventures in Wonderland by Lewis Carroll" at both Gutenberg and LibriSpeech Projects*
 
