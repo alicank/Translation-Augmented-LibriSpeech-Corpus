@@ -56,6 +56,17 @@ Corpus is provided with diffrent tables containing useful information provided w
   
 [img]: https://github.com/alicank/Translation-Augmented-LibriSpeech-Corpus/raw/master/img/db_structure.png "Database Structure"
 
+
+### Database Structure
+
+
+| Table | Usage |
+| ------ | ------ |
+| Alignments | Table containing transcriptions, textual alignments and name of the audio file associated with a given alignment. Each row corresponds to an aligned sentence|
+| alignments_audio | Table that contains duration of each speech segment (seconds) |
+|  alignments_evaluations | Manually evaluated 200 sentences from the corpus|
+| alignments_excluded |  automatic translation output from Google translate for each segment |
+| alignments_scores |  different score calculations provided with the corpus which could be used to sort the corpus |
 **Alignment Tables**
 - Table **Alignments**: Table containing transcriptions, textual alignments and name of the audio file associated with a given alignment. Each row corresponds to a sentence which is aligned
 - Table audio: Table that contains duration of each speech segment(seconds)
