@@ -50,7 +50,10 @@ Database
 ========
 
 Corpus is provided with diffrent tables containing useful information provided with the corpus. Database structure is organized as follows:
-[Imgur](http://i.imgur.com/kd3R3sC.png)
+![alt text][logo]
+
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+
 **Alignment Tables**
 - Table **Alignments**: Table containing transcriptions, textual alignments and name of the audio file associated with a given alignment. Each row corresponds to a sentence which is aligned
 - Table audio: Table that contains duration of each speech segment(seconds)
