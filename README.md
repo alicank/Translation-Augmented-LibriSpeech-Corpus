@@ -50,8 +50,7 @@ Database
 ========
 
 Corpus is provided with diffrent tables containing useful information provided with the corpus. Database structure is organized as follows:
-![Database Structure](https://raw.githubusercontent.com/alicank/Translation-Augmented-LibriSpeech-Corpus
-/master/img/db_structure.png)
+![DB Structure](https://github.com/alicank/Translation-Augmented-LibriSpeech-Corpus/master/img/db_structure.png "DB structure")
 **Alignment Tables**
 - Table **Alignments**: Table containing transcriptions, textual alignments and name of the audio file associated with a given alignment. Each row corresponds to a sentence which is aligned
 - Table audio: Table that contains duration of each speech segment(seconds)
