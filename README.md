@@ -51,8 +51,8 @@ Database
 
 Corpus is provided with diffrent tables containing useful information provided with the corpus. Database structure is organized as follows:
 ![alt text][logo]
-
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+  
+[logo]: https://github.com/adam-p/markdown-here/raw/master/Translation-Augmented-LibriSpeech-Corpus/img/db_structure.png "Logo Title Text 2"
 
 **Alignment Tables**
 - Table **Alignments**: Table containing transcriptions, textual alignments and name of the audio file associated with a given alignment. Each row corresponds to a sentence which is aligned
