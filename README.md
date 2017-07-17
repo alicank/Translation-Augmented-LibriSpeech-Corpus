@@ -67,11 +67,14 @@ Corpus is provided with diffrent tables containing useful information provided w
 |  alignments_evaluations | Manually evaluated 200 sentences from the corpus|
 | alignments_excluded |  automatic translation output from Google translate for each segment |
 | alignments_scores |  different score calculations provided with the corpus which could be used to sort the corpus |
-| Metadata Tables | Explication |
+
+
+
+|Metadata Tables | Explication |
 | ------ | ------ |
 | librispeech |  This table contains all of the book from LibriSpeech project for which a downloadable link could be found (might be  dead/wrong links eventually) |
 | csv,clean100,other |  Metadata completion for books provided with LibriSpeech project |
-| alignments_excluded |  Some french ebook links gathered from nosLivres.net |
+| alignments_excluded |  Some french ebook links gathered from http://www.noslivres.net |
 
 
 Following SQL query could be used to gather most of the useful alignment information:
