@@ -25,21 +25,21 @@ This corpus is composed of **three sections**:
 │   │   ├── alignments
 │   │   ├── en
 │   │   └── fr
-│   ├── lc_book_id.txt|pdf|epub                                                       // Raw french e-book 
-│   └── ls_book_id.txt                                           // Raw english e-book (Gutenberg Project)
+│   ├── lc_book_id.txt|pdf|epub                                                        //Raw french e-book 
+│   └── ls_book_id.txt                                            //Raw english e-book (Gutenberg Project)
 ├── audio_files                                  //Folder contains audio segments for each book in project
 │   ├── 11                                                                    //For example for book id 11
 │   │   ├── 123440                                             //Chapter from dev/test pool of LibriSpeech
 │   │   │   ├── 260-123440-0000.wav                                 //reader_id-chapter_id-sentence_id.wav
 │   │   │   ├── 260-123440-0001.wav
 │   │   │   └── 260-123440-0002.wav
-│   │   └── 123441                                          //Chapter from clean-other pool of LibriSpeech
+│   │   └── 123441                                          //Chapter from clean/other pool of LibriSpeech
 │   │       ├── 11-123441-0000.wav                                    //book_id-chapter_id-sentence_id.wav
 │   │       └── 11-123441-0001.wav
 │   └── book_id
 │       └── chapter_id
 │           ├── book_id-chapter_id-sentence_id.txt
-│           └── **reader_id-chapter_id-sentence_id**.txt
+│           └── **reader_id-chapter_id-sentence_id**.txt                    **dev/test pool of LibriSpeech
 ├── index.html                              //Index page of html visualisation interface built on boostrap 
 └── TA-LibriSpeechCorpus.db.sqlite3     //Sqlite database containing alignments and additional information
 
@@ -51,8 +51,8 @@ Database
 
 Corpus is provided with diffrent tables containing useful information provided with the corpus. Database structure is organized as follows:
 
-** Alignment Tables **
-- Table ** Alignments **: Table containing transcriptions, textual alignments and name of the audio file associated with a given alignment. Each row corresponds to a sentence which is aligned
+**Alignment Tables**
+- Table **Alignments**: Table containing transcriptions, textual alignments and name of the audio file associated with a given alignment. Each row corresponds to a sentence which is aligned
 - Table audio: Table that contains duration of each speech segment(seconds)
 - Table alignments_evaluations: Manually annotated 200 sentences from the corpus
 - Table alignments_excluded: Table used to mark sentences to be excluded in the corpus.
