@@ -20,30 +20,28 @@ This corpus is composed of **three sections**:
 
 ```
 .
-├── Alignments
+├── Alignments      //Folder contains additional files and metadata of alignment and processing steps
 │   ├── chapter_id
 │   │   ├── alignments
 │   │   ├── en
 │   │   └── fr
-│   ├── lc_book_id.txt
-│   └── ls_book_id.txt
-├── audio_files
-│   ├── 11
-│   │   ├── 123440
-│   │   │   ├── 260-123440-0000.wav
+│   ├── lc_book_id.txt|pdf|epub      // Raw french e-book 
+│   └── ls_book_id.txt              // Raw english e-book (Gutenberg Project)
+├── audio_files         //Folder contains audio segments for each book in project
+│   ├── 11                  //For example for book id 11
+│   │   ├── 123440              //Chapter from dev/test pool of LibriSpeech
+│   │   │   ├── 260-123440-0000.wav  //reader_id-chapter_id-sentence_id.wav
 │   │   │   ├── 260-123440-0001.wav
 │   │   │   └── 260-123440-0002.wav
-│   │   └── 123441
-│   │       ├── 11-123441-0000.wav
+│   │   └── 123441          //Chapter from clean-other pool of LibriSpeech
+│   │       ├── 11-123441-0000.wav  //book_id-chapter_id-sentence_id.wav
 │   │       └── 11-123441-0001.wav
 │   └── book_id
 │       └── chapter_id
 │           ├── book_id-chapter_id-sentence_id.txt
 │           └── **reader_id-chapter_id-sentence_id**.txt
-├── book_pages
-├── index.html
-├── readme-deleted.rst
-└── TA-LibriSpeechCorpus.db.sqlite3
+├── index.html          //Index page of html visualisation interface built on boostrap 
+└── TA-LibriSpeechCorpus.db.sqlite3     //Sqlite database containing alignments and additional information
 
 ```
 
