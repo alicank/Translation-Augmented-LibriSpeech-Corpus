@@ -33,28 +33,18 @@ This corpus is composed of **three sections**:
 │   │   │   ├── 260-123440-0000.wav
 │   │   │   ├── 260-123440-0001.wav
 │   │   │   └── 260-123440-0002.wav
-│   │   ├── 123441
-│   │   │   ├── 11-123441-0000.wav
-│   │   │   └── 11-123441-0001.wav
-│   │   ├── 123443
-│   │   │   ├── 11-123443-0000.wav
-│   │   │   ├── 11-123443-0001.wav
-│   │   │   └── 11-123443-0002.wav
-│   │   ├── 123448
-│   │   │   ├── 11-123448-0000.wav
-│   │   │   ├── 11-123448-0001.wav
-│   │   │   └── 11-123448-0002.wav
-│   │   └── 123450
-│   │       ├── 11-123450-0000.wav
-│   │       ├── 11-123450-0001.wav
-│   │       └── 11-123450-0002.wav
+│   │   └── 123441
+│   │       ├── 11-123441-0000.wav
+│   │       └── 11-123441-0001.wav
 │   └── book_id
 │       └── chapter_id
 │           ├── book_id-chapter_id-sentence_id.txt
 │           └── **reader_id-chapter_id-sentence_id**.txt
 ├── book_pages
 ├── index.html
+├── readme-deleted.rst
 └── TA-LibriSpeechCorpus.db.sqlite3
+
 ```
 
 
