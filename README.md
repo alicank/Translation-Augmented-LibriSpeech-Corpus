@@ -60,25 +60,19 @@ Corpus is provided with diffrent tables containing useful information provided w
 ### Database Structure
 
 
-| Table | Usage |
+| Aligment Tables | Explication |
 | ------ | ------ |
 | Alignments | Table containing transcriptions, textual alignments and name of the audio file associated with a given alignment. Each row corresponds to an aligned sentence|
 | alignments_audio | Table that contains duration of each speech segment (seconds) |
 |  alignments_evaluations | Manually evaluated 200 sentences from the corpus|
 | alignments_excluded |  automatic translation output from Google translate for each segment |
 | alignments_scores |  different score calculations provided with the corpus which could be used to sort the corpus |
-**Alignment Tables**
-- Table **Alignments**: Table containing transcriptions, textual alignments and name of the audio file associated with a given alignment. Each row corresponds to a sentence which is aligned
-- Table audio: Table that contains duration of each speech segment(seconds)
-- Table alignments_evaluations: Manually annotated 200 sentences from the corpus
-- Table alignments_excluded: Table used to mark sentences to be excluded in the corpus.
-- Table alignments_gTranslate: automatic translation output from Google translate for each segment (transcriptions)
-- Table alignments_scores: different score calculations provided with the corpus which could be used to sort the corpus from highest scores to the lowest
+| Metadata Tables | Explication |
+| ------ | ------ |
+| librispeech |  This table contains all of the book from LibriSpeech project for which a downloadable link could be found (might be  dead/wrong links eventually) |
+| csv,clean100,other |  Metadata completion for books provided with LibriSpeech project |
+| alignments_excluded |  Some french ebook links gathered from nosLivres.net |
 
-** Metadata Tables **
-- Table **librispeech**: This table contains all of the book from LibriSpeech project for which a downloadable link could be found (might be a dead/wrong link eventually)
-- Table csv,clean100,other: Metadata completion for books provided with LibriSpeech project.
-- Table nosLivres: some french ebook links gathered from nosLivres.net
 
 Following SQL query could be used to gather most of the useful alignment information:
 .. code:: sql
