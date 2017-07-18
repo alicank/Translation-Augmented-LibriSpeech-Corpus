@@ -1,4 +1,4 @@
-Translation-Augmented-LibriSpeech-Corpus
+Translation Augmented LibriSpeech Corpus
 ========================================
 
 This project is an extension of LibriSpeech ASR Corpus which is a corpus of approximatively 1000 hours of speech alignment with their transcriptions [(LibriSpeech: an ASR corpus based on public domain audio books, Vassil Panayotov et al., 2015)](http://www.danielpovey.com/files/2015_icassp_librispeech.pdf) for speech translation systems.
@@ -40,7 +40,7 @@ This corpus is composed of **three sections**:
 │       └── chapter_id
 │           ├── book_id-chapter_id-sentence_id.txt
 │           └── **reader_id-chapter_id-sentence_id**.txt                    **dev/test pool of LibriSpeech
-├── index.html                              //Index page of html visualisation interface built on bootsrap 
+├── index.html                              //Index page of html visualisation interface built on bootstrap 
 └── TA-LibriSpeechCorpus.db.sqlite3     //Sqlite database containing alignments and additional information
 
 ```
