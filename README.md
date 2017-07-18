@@ -63,7 +63,7 @@ Corpus is provided with diffrent tables containing useful information provided w
 | ------ | ------ |
 | alignments | Table containing transcriptions, textual alignments and name of the audio file associated with a given alignment. Each row corresponds to an aligned sentence|
 | alignments_audio | Table that contains duration of each speech segment (seconds) |
-|  alignments_evaluations | Manually evaluated 200 sentences from the corpus|
+| alignments_evaluations | Manually evaluated 200 sentences from the corpus|
 | alignments_excluded |  automatic translation output from Google translate for each segment |
 | alignments_scores |  different score calculations provided with the corpus which could be used to sort the corpus |
 
@@ -118,12 +118,17 @@ python3 TA-LibriSpeech.py train ./folder_output_train --size 1200 --verbose sort
 
 - Optional Arguments
 	- **size**: (minutes) maximum limit to be extracted
-	- sort {None,hunAlign,CNG,LM,CNGLM}: Sorts the corpus before extracting using the selected score. Default is CNG
+	- sort {None,hunAlign,CNG,LM}: Sorts the corpus before extracting using the selected score. Default is CNG
 	- v: Verbose mode
 	- maxSegDuration : Maximum duration of a speech segments
 	- minSegDuration: Minimum duration of a speech segments
 	- extract: Copies speech segments along with
 
 	
+References
+==========
+[LibriSpeech: an ASR corpus based on public domain audio books](http://www.danielpovey.com/files/2015_icassp_librispeech.pdf), Vassil Panayotov, Guoguo Chen, Daniel Povey and Sanjeev Khudanpur, ICASSP 2015.
+[Parallel corpora for medium density languages](http://kornai.com/Papers/ranlp05parallel.pdf), D. Varga, L. Németh, P. Halácsy, A. Kornai, V. Trón, V. Nagy, In Proceedings of the RANLP 2005, pages 590-596.
+
 
 
