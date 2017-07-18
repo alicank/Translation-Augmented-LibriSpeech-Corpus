@@ -114,7 +114,7 @@ python3 TA-LibriSpeech.py train ./folder_output_train --size 1200 --verbose sort
 - Positional Arguments
 	- action: train/dev/test (For dev/test manually evaluated sentences are extracted to the output folder)
 	- output_folder: Path to the output folder
-	- **Output**: Writes to output folder paths of audio files to be extracted, their transcriptions and translations
+	- **Output**: Writes paths of audio files to be extracted, their transcriptions and translations to the output folder
 
 - Optional Arguments
 	- **size**: (minutes) maximum limit to be extracted
