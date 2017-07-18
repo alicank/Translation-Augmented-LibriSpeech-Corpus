@@ -9,7 +9,7 @@ Speech recordings and source texts are originally from [Gutenberg Project](https
 Project Structure
 =================
 
-*Folders name convention corresponds to book id's from LibriSpeech and Gutenberg projects. For example id **11** corresponds to "Alice's Adventures in Wonderland by Lewis Carroll" at both Gutenberg and LibriSpeech Projects*
+*Folder name conventions corresponds to book id's from LibriSpeech and Gutenberg projects. For example id **11** corresponds to "Alice's Adventures in Wonderland by Lewis Carroll" at both Gutenberg and LibriSpeech Projects*
 
 This corpus is composed of **three sections**:
 - Audio Files: Resegmented audio files for each book id in the project. There are in total 247 e-books (1408 chapters) and 131.395 speech segments.
@@ -40,11 +40,10 @@ This corpus is composed of **three sections**:
 │       └── chapter_id
 │           ├── book_id-chapter_id-sentence_id.txt
 │           └── **reader_id-chapter_id-sentence_id**.txt                    **dev/test pool of LibriSpeech
-├── index.html                              //Index page of html visualisation interface built on boostrap 
+├── index.html                              //Index page of html visualisation interface built on bootsrap 
 └── TA-LibriSpeechCorpus.db.sqlite3     //Sqlite database containing alignments and additional information
 
 ```
-
 
 Database
 ========
@@ -78,11 +77,50 @@ Corpus is provided with diffrent tables containing useful information provided w
 
 
 Following SQL query could be used to gather most of the useful alignment information:
-.. code:: sql
-    SELECT * FROM alignments
+```
+	SELECT * FROM alignments
     JOIN (alignments_excluded JOIN alignments_scores USING(audio_filename) )
     USING ( audio_filename ) WHERE excluded != "True"
     ORDER BY alignment_score DESC
 
+```
+
+Script
+======
+
+We developed a script that could be used to interact with the database for extracting train,dev,test data to an output folder.
+**TA-LibriSpeech.py** Module Description:
+
+.. code:: console
+
+	usage: TA-LibriSpeech.py [-h] [--size SIZE] [--listTrain LISTTRAIN]
+                         [--useEvaluated USEEVALUATED]
+                         [--sort {None,hunAlign,CNG}] [-v]
+                         [--maxSegDuration MAXSEGDURATION]
+                         [--minSegDuration MINSEGDURATION] [--extract]
+                         action output
+
+
+**Example use**:
+
+```
+python3 TA-LibriSpeech.py train ./folder_output_train --size 1200 --verbose sort CNG --maxSegDuration 35.0 --minSegDuration 3.0 --extract
+```
+
+**Arguments**
+
+- Positional Arguments
+	- action: train/dev/test (When the action is dev/test from 200 sentences that are manually annotated, only sentences that are well aligned are extracted)
+	- output_folder: Path to the output folder where the corpus is to be extracted
+
+- Optional Arguments
+	- **size**: (minutes) maximum Limit to be extracted
+	- sort {None,hunAlign,CNG,LM,CNGLM}: Sorts the corpus before extracting using the selected score. Default is CNG
+	- v: Verbose mode
+	- maxSegDuration : Maximum duration of a speech segments
+	- minSegDuration: Minimum duration of a speech segments
+	- extract: Copies sound files to the output folder along with audio_filename,metadata,transcription and translation files
+
+	
 
 
