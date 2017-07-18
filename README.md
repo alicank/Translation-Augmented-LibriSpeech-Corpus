@@ -88,10 +88,11 @@ Following SQL query could be used to gather most of the useful alignment informa
 Script
 ======
 
-We developed a script that could be used to interact with the database for extracting train,dev,test data to an output folder.
-**TA-LibriSpeech.py** Module Description:
+We developed a script that could be used to interact with the database for extracting train,dev and test data to an output folder.
 
-.. code:: console
+
+**TA-LibriSpeech.py** Module Description:
+```
 
 	usage: TA-LibriSpeech.py [-h] [--size SIZE] [--listTrain LISTTRAIN]
                          [--useEvaluated USEEVALUATED]
@@ -100,26 +101,28 @@ We developed a script that could be used to interact with the database for extra
                          [--minSegDuration MINSEGDURATION] [--extract]
                          action output
 
-
-**Example use**:
-
 ```
+
+### Example use:
+
+```python
 python3 TA-LibriSpeech.py train ./folder_output_train --size 1200 --verbose sort CNG --maxSegDuration 35.0 --minSegDuration 3.0 --extract
 ```
 
-**Arguments**
+### Arguments
 
 - Positional Arguments
-	- action: train/dev/test (When the action is dev/test from 200 sentences that are manually annotated, only sentences that are well aligned are extracted)
-	- output_folder: Path to the output folder where the corpus is to be extracted
+	- action: train/dev/test (For dev/test manually evaluated sentences are extracted to the output folder)
+	- output_folder: Path to the output folder
+	**Output**: Writes to output folder paths of audio files to be extracted, their transcriptions and translations
 
 - Optional Arguments
-	- **size**: (minutes) maximum Limit to be extracted
+	- **size**: (minutes) maximum limit to be extracted
 	- sort {None,hunAlign,CNG,LM,CNGLM}: Sorts the corpus before extracting using the selected score. Default is CNG
 	- v: Verbose mode
 	- maxSegDuration : Maximum duration of a speech segments
 	- minSegDuration: Minimum duration of a speech segments
-	- extract: Copies sound files to the output folder along with audio_filename,metadata,transcription and translation files
+	- extract: Copies speech segments along with
 
 	
 
