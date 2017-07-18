@@ -57,16 +57,16 @@ Corpus is provided with diffrent tables containing useful information provided w
 | Aligment Tables | Details |
 | ------ | ------ |
 | alignments | Table containing transcriptions, textual alignments and name of the audio file associated with a given alignment. Each row corresponds to an aligned sentence|
-| alignments_audio | Table that contains duration of each speech segment (seconds) |
+| alignments_audio | Table containing duration of each speech segment (seconds) |
 | alignments_evaluations | Manually evaluated 200 sentences from the corpus|
-| alignments_excluded |  automatic translation output from Google translate for each segment |
-| alignments_scores |  different score calculations provided with the corpus which could be used to sort the corpus |
+| alignments_excluded |  Automatic translation output from Google Translate for each segment |
+| alignments_scores |  Different score calculations provided with the corpus which could be used to sort the corpus |
 
 
 
 |Metadata Tables | Details |
 | ------ | ------ |
-| librispeech |  This table contains all of the book from LibriSpeech project for which a downloadable link could be found (might be  dead/wrong links eventually) |
+| librispeech |  Table containing all of the books from LibriSpeech project for which a downloadable link could be found (might be  dead/wrong links eventually) |
 | csv,clean100,other |  Metadata completion for books provided with LibriSpeech project |
 | alignments_excluded |  Some french ebook links gathered from http://www.noslivres.net |
 
