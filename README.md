@@ -1,7 +1,7 @@
 Translation-Augmented-LibriSpeech-Corpus
 ========================================
 
-This project is an extension of LibriSpeech ASR Corpus which is a corpus of approximatively 1000 hours of speech alignment with their transcriptions [LibriSpeech: an ASR corpus based on public domain audio books, Vassil Panayotov, Guoguo Chen, Daniel Povey and Sanjeev Khudanpur, ICASSP 2015](http://www.danielpovey.com/files/2015_icassp_librispeech.pdf) for speech translation systems.
+This project is an extension of LibriSpeech ASR Corpus which is a corpus of approximatively 1000 hours of speech alignment with their transcriptions [(LibriSpeech: an ASR corpus based on public domain audio books, Vassil Panayotov et al., 2015)](http://www.danielpovey.com/files/2015_icassp_librispeech.pdf) for speech translation systems.
 
 
 Speech recordings and source texts are originally from [Gutenberg Project](https://www.http://www.gutenberg.org) which is a digital library of public domain books read by volunteers.  In this project we gathered open domain e-books in French and extracted chapters that are avaliable in LibriSpeech Project. Furthermore, we aligned english transcriptions with their respective french translations in order to provide a corpus of speech recordings aligned with their respective translations. Our corpus is licenced under a [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/legalcode)
@@ -59,9 +59,9 @@ Corpus is provided with diffrent tables containing useful information provided w
 ### Database Structure
 
 
-| Aligment Tables | Explication |
+| Aligment Tables | Details |
 | ------ | ------ |
-| Alignments | Table containing transcriptions, textual alignments and name of the audio file associated with a given alignment. Each row corresponds to an aligned sentence|
+| alignments | Table containing transcriptions, textual alignments and name of the audio file associated with a given alignment. Each row corresponds to an aligned sentence|
 | alignments_audio | Table that contains duration of each speech segment (seconds) |
 |  alignments_evaluations | Manually evaluated 200 sentences from the corpus|
 | alignments_excluded |  automatic translation output from Google translate for each segment |
@@ -69,7 +69,7 @@ Corpus is provided with diffrent tables containing useful information provided w
 
 
 
-|Metadata Tables | Explication |
+|Metadata Tables | Details |
 | ------ | ------ |
 | librispeech |  This table contains all of the book from LibriSpeech project for which a downloadable link could be found (might be  dead/wrong links eventually) |
 | csv,clean100,other |  Metadata completion for books provided with LibriSpeech project |
@@ -78,7 +78,7 @@ Corpus is provided with diffrent tables containing useful information provided w
 
 Following SQL query could be used to gather most of the useful alignment information:
 ```
-	SELECT * FROM alignments
+    SELECT * FROM alignments
     JOIN (alignments_excluded JOIN alignments_scores USING(audio_filename) )
     USING ( audio_filename ) WHERE excluded != "True"
     ORDER BY alignment_score DESC
@@ -105,7 +105,7 @@ We developed a script that could be used to interact with the database for extra
 
 ### Example use:
 
-```python
+```
 python3 TA-LibriSpeech.py train ./folder_output_train --size 1200 --verbose sort CNG --maxSegDuration 35.0 --minSegDuration 3.0 --extract
 ```
 
