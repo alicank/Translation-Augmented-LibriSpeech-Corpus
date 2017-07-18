@@ -127,8 +127,8 @@ python3 TA-LibriSpeech.py train ./folder_output_train --size 1200 --verbose sort
 	
 References
 ==========
-[LibriSpeech: an ASR corpus based on public domain audio books](http://www.danielpovey.com/files/2015_icassp_librispeech.pdf), Vassil Panayotov, Guoguo Chen, Daniel Povey and Sanjeev Khudanpur, ICASSP 2015.
-[Parallel corpora for medium density languages](http://kornai.com/Papers/ranlp05parallel.pdf), D. Varga, L. Németh, P. Halácsy, A. Kornai, V. Trón, V. Nagy, In Proceedings of the RANLP 2005, pages 590-596.
+1. [LibriSpeech: an ASR corpus based on public domain audio books](http://www.danielpovey.com/files/2015_icassp_librispeech.pdf), Vassil Panayotov, Guoguo Chen, Daniel Povey and Sanjeev Khudanpur, ICASSP 2015.
+2. [Parallel corpora for medium density languages](http://kornai.com/Papers/ranlp05parallel.pdf), D. Varga, L. Németh, P. Halácsy, A. Kornai, V. Trón, V. Nagy, In Proceedings of the RANLP 2005, pages 590-596.
 
 
 
