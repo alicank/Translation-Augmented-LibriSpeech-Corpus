@@ -51,11 +51,6 @@ Database
 Corpus is provided with diffrent tables containing useful information provided with the corpus. Database structure is organized as follows:
 
 
-![Database Structure][img]
-  
-[img]: https://github.com/alicank/Translation-Augmented-LibriSpeech-Corpus/raw/master/img/db_structure.png "Database Structure"
-
-
 ### Database Structure
 
 
@@ -74,6 +69,11 @@ Corpus is provided with diffrent tables containing useful information provided w
 | librispeech |  This table contains all of the book from LibriSpeech project for which a downloadable link could be found (might be  dead/wrong links eventually) |
 | csv,clean100,other |  Metadata completion for books provided with LibriSpeech project |
 | alignments_excluded |  Some french ebook links gathered from http://www.noslivres.net |
+
+![Database Structure][img]
+  
+[img]: https://github.com/alicank/Translation-Augmented-LibriSpeech-Corpus/raw/master/img/db_structure.png "Database Structure"
+
 
 
 Following SQL query could be used to gather most of the useful alignment information:
