@@ -12,8 +12,8 @@ Project Structure
 *Folder name conventions corresponds to book id's from LibriSpeech and Gutenberg projects. For example id **11** corresponds to "Alice's Adventures in Wonderland by Lewis Carroll" at both Gutenberg and LibriSpeech Projects*
 
 This corpus is composed of **three sections**:
-- Audio Files: Resegmented audio files for each book id in the project. There are in total 247 e-books (1408 chapters) and 131.395 speech segments.
-- HTML visualisation interface : We provide an html interface to visualize alignments and to listen to speech segments
+- Audio Files: Resegmented audio files for each book id. There are in total 247 e-books (1408 chapters) and 131.395 speech segments.
+- HTML visualisation interface: We provide an html interface to visualize alignments and to listen to speech segments
 - Alignments folder: Additional files created in the alignment and processing steps for each book
 
 **The repository is organized as follows**:
@@ -48,7 +48,7 @@ This corpus is composed of **three sections**:
 Database
 ========
 
-Corpus is provided with diffrent tables containing useful information provided with the corpus. Database structure is organized as follows:
+Corpus is provided with different tables containing useful information. The database structure is organized as follows:
 
 
 ### Database Structure
@@ -76,7 +76,7 @@ Corpus is provided with diffrent tables containing useful information provided w
 
 
 
-Following SQL query could be used to gather most of the useful alignment information:
+The following SQL query could be used to gather most of the useful alignment information:
 ```
     SELECT * FROM alignments
     JOIN (alignments_excluded JOIN alignments_scores USING(audio_filename) )
@@ -88,7 +88,7 @@ Following SQL query could be used to gather most of the useful alignment informa
 Script
 ======
 
-We developed a script that could be used to interact with the database for extracting train,dev and test data to an output folder.
+We developed a script that could be used to interact with the database for extracting train, dev and test data to an output folder.
 
 
 **TA-LibriSpeech.py** Module Description:
@@ -120,9 +120,9 @@ python3 TA-LibriSpeech.py train ./folder_output_train --size 1200 --verbose sort
 	- **size**: (minutes) maximum limit to be extracted
 	- sort {None,hunAlign,CNG,LM}: Sorts the corpus before extracting using the selected score. Default is CNG
 	- v: Verbose mode
-	- maxSegDuration : Maximum duration of a speech segments
-	- minSegDuration: Minimum duration of a speech segments
-	- extract: Copies speech segments along with
+	- maxSegDuration : Maximum duration of a speech segment
+	- minSegDuration: Minimum duration of a speech segment
+	- extract: Copies speech segments along with transcription and translation files
 
 	
 References
