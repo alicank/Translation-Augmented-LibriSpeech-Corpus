@@ -107,9 +107,7 @@ if __name__ == '__main__':
     parser.add_argument('--sort', help='Sorts the corpus using scores before extracting'
                         'None: Do not sort'
                         'hunAlign: Using hunAlign scores'
-                        'CNG: Using CL-CNG & CL-CTS scores ',
-                        'LM: Using CL-CTS & Pouliquen Length',
-                        default='None',
+                        'CNG: Using CL-CNG & CL-CTS scores ', default='None',
                         choices=('None', 'hunAlign', 'CNG', 'LM'))
 
     parser.add_argument('-v', '--verbose', help='verbose mode',
