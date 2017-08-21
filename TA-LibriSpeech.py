@@ -107,8 +107,10 @@ if __name__ == '__main__':
     parser.add_argument('--sort', help='Sorts the corpus using scores before extracting'
                         'None: Do not sort'
                         'hunAlign: Using hunAlign scores'
-                        'CNG: Using CL-CNG scores ', default='CNG',
-                        choices=('None', 'hunAlign', 'CNG'))
+                        'CNG: Using CL-CNG & CL-CTS scores ',
+                        'LM: Using CL-CTS & Pouliquen Length',
+                        default='None',
+                        choices=('None', 'hunAlign', 'CNG', 'LM'))
 
     parser.add_argument('-v', '--verbose', help='verbose mode',
                         action='store_true', default= True)
@@ -116,8 +118,8 @@ if __name__ == '__main__':
 
 
     parser.add_argument("--maxSegDuration",help="Maximum length of an audio file (segment) in seconds"
-                                                "Default: 30 seconds", default=30.0)
-    parser.add_argument("--minSegDuration",help="Minimum length of an audio file", default = 0.0)
+                                                "Default: 30 seconds", default=30.0, type=float)
+    parser.add_argument("--minSegDuration",help="Minimum length of an audio file", default = 0.0, type=float)
     parser.add_argument("--extract", help="Copies the sound files to output folder instead of"
                                           "copying only the audio filenames along with transcription and translation files",
                         action="store_true", default = False)
@@ -130,6 +132,8 @@ if __name__ == '__main__':
         args.sort = "ORDER BY alignment_score DESC"
     elif args.sort == "CNG":
         args.sort = "ORDER BY cng_score DESC"
+    elif args.sort == "LM":
+        args.sort = "ORDER BY lm_score DESC"
 
     dev_test = False
     if args.listTrain != "" and (args.action == "dev" or args.action == "test"):
