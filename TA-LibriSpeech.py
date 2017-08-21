@@ -125,13 +125,13 @@ if __name__ == '__main__':
     args = parser.parse_args()
     sorttype = args.sort
     if args.sort == "None":
-        args.sort = ""
+        args.sort = "ORDER BY book_id"
     elif args.sort == "hunAlign":
         args.sort = "ORDER BY alignment_score DESC"
     elif args.sort == "CNG":
         args.sort = "ORDER BY cng_score DESC"
     elif args.sort == "LM":
-        args.sort = "ORDER BY lm_score DESC"
+        args.sort = "ORDER BY lm_score"
 
     dev_test = False
     if args.listTrain != "" and (args.action == "dev" or args.action == "test"):
@@ -235,10 +235,12 @@ if __name__ == '__main__':
                 continue
 
             #Alignment scores
+
             scores = {}
             scores['CNG'] = row[-2]
             scores['hunAlign'] = row[8]
             scores['None'] = row[-2]
+            scores['LM'] = row[-1]
             score = scores[sorttype]
             #Query for segment duration
             cursor = db_connection.execute("SELECT * FROM alignments_audio WHERE audio_filename = \"" + audio_filename+"\"")
