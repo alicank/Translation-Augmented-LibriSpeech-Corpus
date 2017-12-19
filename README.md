@@ -4,11 +4,24 @@ LIBRI-TRANS: Translation-Augmented-LibriSpeech-Corpus
 Large scale (>200h) and publicly available read audio book corpus. This corpus is an augmentation of [(LibriSpeech ASR corpus](http://www.danielpovey.com/files/2015_icassp_librispeech.pdf)(1000h)[1] and contains English utterances (from audiobooks) automatically aligned with French text. Our dataset offers ~236h of speech aligned to translated text. 
 
 Overview of the corpus:
-+----------+-------+--------------+----------------+
 | Chapters | Books | Duration (h) | Total Segments |
-+----------+-------+--------------+----------------+
+|:--------:|:-----:|:------------:|:--------------:|
 |   1408   |  247  |     ~236h    |     131395     |
-+----------+-------+--------------+----------------+
+
+
+Speech recordings and source texts are originally from [Gutenberg Project](https://www.http://www.gutenberg.org)[2], which is a digital library of public domain books read by volunteers. Our augmentation of LibriSpeech is straightforward: we automatically aligned e-books in a foreign language (French) with English utterances of LibriSpeech. 
+
+We gathered open domain ebooks in french and extracted individual chapters available in LibriSpeech Corpus. Furthermore, we aligned chapters in French with English utterances in order to provide a corpus of speech recordings aligned with their translations. Our corpus is licensed under a [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/legalcode).
+
+Further information on how the corpus was obtained can be found in [3].
+
+
+Details on the 100h subset:
+===========================
+This 100h subset was specifically designed for direct speech translation training and evaluation.
+It was used for the first time in [4] (end-to-end automatic speech recognition of audiobooks).
+In this subset, we extracted the best 100h according to cross language alignment scores. Dev and Test sets are composed of clean speech segments only. 
+Since English (source) transcriptions are initially available for LibriSpeech, we also translated them using Google Translate. To summarize, for each utterance of our corpus, the following quadruplet is available: English speech signal, English transcription (should not be used for direct speech translation experiments), French text translation 1 (from alignment of e-books) and translation 2 (from MT of English transcripts).
 
 |      Corpus     |   Total  |        | Source(per seg) |       |            | Target(per seg) |
 |:---------------:|:--------:|:------:|:---------------:|:-----:|:----------:|:---------------:|
@@ -17,7 +30,40 @@ Overview of the corpus:
 |       dev       |   1071   |  2:00  |       673       |   93  |    17.9    |       110       |
 |       test      |   2048   |  3:44  |       657       |   95  |    18.3    |       112       |
 
-Speech recordings and source texts are originally from [Gutenberg Project](https://www.http://www.gutenberg.org) which is a digital library of public domain books read by volunteers.  In this project we gathered open domain e-books in French and extracted chapters that are avaliable in LibriSpeech Project. Furthermore, we aligned english transcriptions with their respective french translations in order to provide a corpus of speech recordings aligned with their respective translations. Our corpus is licenced under a [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/legalcode)
+The following archives correspond to the 100h subset used in [4]: 
+
+For audio files:
+
+- train_100h.zip (~8.7GB)
+- dev.zip(~180MB)
+- test.zip(~330MB)
+- train_130h_additional.zip (~10.6GB)
+
+For aligned text files:
+
+- train_100h_txt.zip
+- dev_txt.zip
+- test_txt.zip
+- train130h_additional_txt.zip
+
+Other archives provided:
+========================
+
+Following archives are available to download for other potential use of the corpus: 
+
+- database.zip(~50MB): Database describing the corpus (sqlite3)
+- alignments.zip(~1.86GB): All of the intermediate processing files created in the cross-lingual alignment process along with English and French raw ebooks.
+- audio_files.zip(~23GB): All of the speech segments organized as books and chapters
+- interface.zip(~72MB): Contains static html files for alignment visualisation. With the interface, speech utterances can be listened while visualizing each sentence alignment.
+
+Note: In order to listen to speech segments with the html interface, 'audio_files' folder should be placed inside the 'Interface' folder.
+./Interface
+ ./audio_files (audio_files.zip)
+ ./css (interface.zip)
+ ./js (interface.zip)
+ (..)
+
+
 
 Project Structure
 =================
