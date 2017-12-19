@@ -3,15 +3,15 @@ LIBRI-TRANS: Translation-Augmented-LibriSpeech-Corpus
 
 Large scale (>200h) and publicly available read audio book corpus. This corpus is an augmentation of [(LibriSpeech ASR corpus](http://www.danielpovey.com/files/2015_icassp_librispeech.pdf)(1000h)[1] and contains English utterances (from audiobooks) automatically aligned with French text. Our dataset offers ~236h of speech aligned to translated text. 
 
+### Dataset Link
+https://persyval-platform.univ-grenoble-alpes.fr/DS91/detaildataset
+
 ### Overview of the corpus:
 
 | Chapters | Books | Duration (h) | Total Segments |
 |:--------:|:-----:|:------------:|:--------------:|
 |   1408   |  247  |     ~236h    |     131395     |
 
-
-### Link to DataSet
-https://persyval-platform.univ-grenoble-alpes.fr/DS91/detaildataset
 
 Speech recordings and source texts are originally from [Gutenberg Project](https://www.http://www.gutenberg.org)[2], which is a digital library of public domain books read by volunteers. Our augmentation of LibriSpeech is straightforward: we automatically aligned e-books in a foreign language (French) with English utterances of LibriSpeech. 
 
@@ -20,8 +20,8 @@ We gathered open domain ebooks in french and extracted individual chapters avail
 Further information on how the corpus was obtained can be found in [3].
 
 
-Details on the 100h subset:
-===========================
+### Details on the 100h subset:
+
 This 100h subset was specifically designed for direct speech translation training and evaluation.
 It was used for the first time in [4] (end-to-end automatic speech recognition of audiobooks).
 In this subset, we extracted the best 100h according to cross language alignment scores. Dev and Test sets are composed of clean speech segments only. 
@@ -50,8 +50,7 @@ For aligned text files:
 - test_txt.zip
 - train130h_additional_txt.zip
 
-Other archives provided:
-========================
+### Other archives provided:
 
 Following archives are available to download for other potential use of the corpus: 
 
