@@ -3,12 +3,15 @@ LIBRI-TRANS: Translation-Augmented-LibriSpeech-Corpus
 
 Large scale (>200h) and publicly available read audio book corpus. This corpus is an augmentation of [(LibriSpeech ASR corpus](http://www.danielpovey.com/files/2015_icassp_librispeech.pdf)(1000h)[1] and contains English utterances (from audiobooks) automatically aligned with French text. Our dataset offers ~236h of speech aligned to translated text. 
 
-Overview of the corpus:
+### Overview of the corpus:
 
 | Chapters | Books | Duration (h) | Total Segments |
 |:--------:|:-----:|:------------:|:--------------:|
 |   1408   |  247  |     ~236h    |     131395     |
 
+
+### Link to DataSet
+https://persyval-platform.univ-grenoble-alpes.fr/DS91/detaildataset
 
 Speech recordings and source texts are originally from [Gutenberg Project](https://www.http://www.gutenberg.org)[2], which is a digital library of public domain books read by volunteers. Our augmentation of LibriSpeech is straightforward: we automatically aligned e-books in a foreign language (French) with English utterances of LibriSpeech. 
 
