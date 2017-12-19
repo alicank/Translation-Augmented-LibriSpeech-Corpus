@@ -10,6 +10,13 @@ Overview of the corpus:
 |   1408   |  247  |     ~236h    |     131395     |
 +----------+-------+--------------+----------------+
 
+|      Corpus     |   Total  |        | Source(per seg) |       |            | Target(per seg) |
+|:---------------:|:--------:|:------:|:---------------:|:-----:|:----------:|:---------------:|
+|                 | segments |  hours |      frames     | chars | (sub)words |      chars      |
+| train 1 train 2 |   47271  | 100:00 |       762       |  111  |    20.7    |     143 126     |
+|       dev       |   1071   |  2:00  |       673       |   93  |    17.9    |       110       |
+|       test      |   2048   |  3:44  |       657       |   95  |    18.3    |       112       |
+
 Speech recordings and source texts are originally from [Gutenberg Project](https://www.http://www.gutenberg.org) which is a digital library of public domain books read by volunteers.  In this project we gathered open domain e-books in French and extracted chapters that are avaliable in LibriSpeech Project. Furthermore, we aligned english transcriptions with their respective french translations in order to provide a corpus of speech recordings aligned with their respective translations. Our corpus is licenced under a [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/legalcode)
 
 Project Structure
