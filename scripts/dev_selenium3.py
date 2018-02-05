@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+#####################################################################################################
+# Groupe d'Étude pour la Traduction/le Traitement Automatique des Langues et de la Parole (GETALP)
+# Homepage: http://getalp.imag.fr
+# Author: Alican Kocabiyikoglu
+#####################################################################################################
+
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
@@ -11,6 +18,8 @@ import pickle
 import json
 import pprint
 import re
+
+#For full tutorial see: http://www.marinamele.com/selenium-tutorial-web-scraping-with-selenium-and-python
 
 def init_driver():
 	####### Marionette & Binary Files
@@ -220,86 +229,6 @@ if __name__ == "__main__":
 
 
 	chercherLivres("./temp/livres_a_rechercher.txt", "../data/searchElements.p")
-
-	#hashBooks = depickle("../data/essai.searchElements.p")
-
-	#pp = pprint.PrettyPrinter(width=41, compact=True)
-
-	#Hashbooks => dict
-	#key all strings == keys
-	#values -> soit une liste soit dictionnaire
-	#db = dataset.connect('sqlite:///../DB/csv.db')
-	#table = db['nosLivres']
-
-	########### NOT IN USE ###########
-	sys.exit()
-	hashBooks = depickle("../data/searchElements.p")
-	result = {}
-	for key, values in hashBooks.items():
-
-		# Livre associé a une liste vide
-		if len(values) < 1:
-			result[key] = "NA"
-		else:
-			# print("\t"+ key)
-			# Livre associé a une liste ou il n'y a pas de sous listes
-			for items in values:
-				if type(items) == str:
-					if key not in result.keys():
-						result[key] = items + "\t"
-					else:
-						result[key] += items + "\t"
-				else:
-					if len(items) < 1:
-						if key not in result.keys():
-							result[key] = "NA"
-						else:
-							if len(items) < 1:
-								result[key] = "NA"
-					else:
-						for info in items:
-							if key not in result.keys():
-								result[key] = info + "\t"
-							else:
-								result[key] += info + "\t"
-
-
-	hashCounts= {}
-	for key,values in result.items():
-		#NA
-		if values == "NA":
-			hashCounts[key] = "NA"
-		else:
-			data = values.split("\t")
-			bookCount = 0
-			i = 0
-			listLength = len(data)
-			while i < listLength-1:
-				if data[i].startswith("http:"):
-					hashCounts[key] = bookCount
-				else:
-					bookCount += 1
-
-				i += 1
-
-
-	# in the DB -> id|book_name|link
-	db = dataset.connect('sqlite:///../DB/csv.db')
-	table = db['nosLivres']
-	for key,values in result.items():
-		if values == "NA":
-			assert 0 == 0
-			"""table.insert(dict(
-				book_name=key,
-				link="NA"))"""
-		else:
-			bookCount = hashCounts[key]
-
-	"""
-
-	pp = pprint.PrettyPrinter(indent=4)
-	pp.pprint(result)
-	"""
 
 
 
