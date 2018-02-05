@@ -71,12 +71,12 @@ Note: In order to listen to speech segments with the html interface, 'audio_file
 Project Structure
 =================
 
-*Folder name conventions corresponds to book id's from LibriSpeech and Gutenberg projects. For example id **11** corresponds to "Alice's Adventures in Wonderland by Lewis Carroll" at both Gutenberg and LibriSpeech Projects*
+*Folders name convention corresponds to book id's from LibriSpeech and Gutenberg projects. For instance folder name **11** corresponds to the id number of "Alice's Adventures in Wonderland by Lewis Carroll" in both Gutenberg Project and LibriSpeech Project.*
 
 This corpus is composed of **three sections**:
-- Audio Files: Resegmented audio files for each book id. There are in total 247 e-books (1408 chapters) and 131.395 speech segments.
-- HTML visualisation interface: We provide an html interface to visualize alignments and to listen to speech segments
-- Alignments folder: Additional files created in the alignment and processing steps for each book
+- Audio Files: resegmented audio files for each book id in the project
+- HTML alignment visualisation interface : HTML visualisation for textual alignments with audio files avaliable to listen
+- Alignments folder: all of the processing steps: pre-processing, alignment, forced transcriptions, forced alignments, etc.
 
 **The repository is organized as follows**:
 
@@ -119,17 +119,18 @@ Corpus is provided with different tables containing useful information. The data
 | Aligment Tables | Details |
 | ------ | ------ |
 | alignments | Table containing transcriptions, textual alignments and name of the audio file associated with a given alignment. Each row corresponds to an aligned sentence|
-| alignments_audio | Table containing duration of each speech segment (seconds) |
-| alignments_evaluations | Manually evaluated 200 sentences from the corpus|
-| alignments_excluded |  Automatic translation output from Google Translate for each segment |
-| alignments_scores |  Different score calculations provided with the corpus which could be used to sort the corpus |
+| alignments_audio | Table that contains duration of each speech segment (seconds) |
+| alignments_evaluations | 200 sentences manually annotated (for alignement evaluation see [3]) |
+| alignments_excluded |  Table used to mark sentences to be excluded from the corpus (bad alignments) |
+| alignments_gTranslate |  Automatic translation output from Google translate for each segment (transcriptions) |
+| alignments_scores |  different cross lingual alignment score calculations provided with the corpus which could be used to sort the corpus from highest scores to the lowest |
 
 
 
 |Metadata Tables | Details |
 | ------ | ------ |
-| librispeech |  Table containing all of the books from LibriSpeech project for which a downloadable link could be found (might be  dead/wrong links eventually) |
-| csv,clean100,other |  Metadata completion for books provided with LibriSpeech project |
+| librispeech |  This table contains all the books from LibriSpeech project for which a downloadable link could be found (might be a dead/wrong link if it disappeared after our work) |
+| csv,clean100,other |  Metadata completion for books provided with LibriSpeech project|
 | alignments_excluded |  Some french ebook links gathered from http://www.noslivres.net |
 
 ![Database Structure][img]
@@ -150,7 +151,7 @@ The following SQL query could be used to gather most of the useful alignment inf
 Script
 ======
 
-We developed a script that could be used to interact with the database for extracting train, dev and test data to an output folder.
+We provide a script that could be used to interact with the database for extracting train, dev and test data to an output folder.
 
 
 **TA-LibriSpeech.py** Module Description:
@@ -189,8 +190,7 @@ python3 TA-LibriSpeech.py train ./folder_output_train --size 1200 --verbose --so
 	
 References
 ==========
-1. [LibriSpeech: an ASR corpus based on public domain audio books](http://www.danielpovey.com/files/2015_icassp_librispeech.pdf), Vassil Panayotov, Guoguo Chen, Daniel Povey and Sanjeev Khudanpur, ICASSP 2015.
-2. [Parallel corpora for medium density languages](http://kornai.com/Papers/ranlp05parallel.pdf), D. Varga, L. Németh, P. Halácsy, A. Kornai, V. Trón, V. Nagy, In Proceedings of the RANLP 2005, pages 590-596.
-
-
-
+\[1\]. [Librispeech: an ASR corpus based on public domain audio books.](http://www.danielpovey.com/files/2015_icassp_librispeech.pdf), Vassil Panayotov, Guoguo Chen, Daniel Povey and Sanjeev Khudanpur, ICASSP 2015.
+\[2\]. [Gutenberg Project](https://www.gutenberg.org/)
+\[3\]. Ali Can Kocabiyikoglu, Laurent Besacier and Olivier Kraif, "Augmenting LibriSpeech with French Translations : A Multimodal Corpus for Direct Speech Translation Evaluation" in submitted to LREC, 2018.
+\[4\] Aléxandre Bérard, Laurent Besacier, Ali Can Kocabiyikoglu and Olivier Pietquin, "End-to-End Automatic Speech Translation of Audiobooks" in submitted to ICASSP, 2018.
