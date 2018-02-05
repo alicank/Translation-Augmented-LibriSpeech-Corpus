@@ -21,14 +21,14 @@ import re
 
 #For full tutorial see: http://www.marinamele.com/selenium-tutorial-web-scraping-with-selenium-and-python
 
-def init_driver():
+def init_driver(driver_adress):
 	####### Marionette & Binary Files
-	geckodriver = "/home/alican/Documents/LIG-StageM2/LibriSpeech/lib/geckodriver"
+	geckodriver = driver_adress
 	driver = webdriver.Firefox(executable_path=geckodriver)
 	return driver
 
 
-def lookup(driver, query,key):
+def lookup(driver, query, key):
 
 	# Ouverture du site nouslivres.net
 	driver.get("http://www.noslivres.net/")
@@ -219,9 +219,7 @@ if __name__ == "__main__":
 
 	# Recupération des données a partir de
 	table = basicDBquery("csv", "translated_title")
-	# table = basicDBquery("csv","")
-
-
+	
 	# Liste des titres traduits
 	titres_DB = []
 	for rows in table:
