@@ -190,10 +190,10 @@ python3 TA-LibriSpeech.py train ./folder_output_train --size 1200 --verbose --so
 	
 References
 ==========
-\[1\]. [Librispeech: an ASR corpus based on public domain audio books.](http://www.danielpovey.com/files/2015_icassp_librispeech.pdf), Vassil Panayotov, Guoguo Chen, Daniel Povey and Sanjeev Khudanpur, ICASSP 2015.
+\[1\] [Librispeech: an ASR corpus based on public domain audio books.](http://www.danielpovey.com/files/2015_icassp_librispeech.pdf), Vassil Panayotov, Guoguo Chen, Daniel Povey and Sanjeev Khudanpur, ICASSP 2015.
 
-\[2\]. [Gutenberg Project](https://www.gutenberg.org/)
+\[2\] [Gutenberg Project](https://www.gutenberg.org/)
 
-\[3\]. Ali Can Kocabiyikoglu, Laurent Besacier and Olivier Kraif, "Augmenting LibriSpeech with French Translations : A Multimodal Corpus for Direct Speech Translation Evaluation" in submitted to LREC, 2018.
+\[3\] Ali Can Kocabiyikoglu, Laurent Besacier and Olivier Kraif, "Augmenting LibriSpeech with French Translations : A Multimodal Corpus for Direct Speech Translation Evaluation" in submitted to LREC, 2018.
 
 \[4\] Aléxandre Bérard, Laurent Besacier, Ali Can Kocabiyikoglu and Olivier Pietquin, "End-to-End Automatic Speech Translation of Audiobooks" in submitted to ICASSP, 2018.
