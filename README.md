@@ -194,6 +194,6 @@ References
 
 \[2\] [Gutenberg Project](https://www.gutenberg.org/)
 
-\[3\] Ali Can Kocabiyikoglu, Laurent Besacier and Olivier Kraif, "Augmenting LibriSpeech with French Translations : A Multimodal Corpus for Direct Speech Translation Evaluation" in submitted to LREC, 2018.
+\[3\] Ali Can Kocabiyikoglu, Laurent Besacier and Olivier Kraif, ["Augmenting LibriSpeech with French Translations : A Multimodal Corpus for Direct Speech Translation Evaluation"](https://arxiv.org/abs/1802.03142), LREC 2018.
 
-\[4\] Aléxandre Bérard, Laurent Besacier, Ali Can Kocabiyikoglu and Olivier Pietquin, "End-to-End Automatic Speech Translation of Audiobooks" in submitted to ICASSP, 2018.
+\[4\] Aléxandre Bérard, Laurent Besacier, Ali Can Kocabiyikoglu and Olivier Pietquin, ["End-to-End Automatic Speech Translation of Audiobooks"](https://arxiv.org/abs/1802.04200), ICASSP 2018.
