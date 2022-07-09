@@ -5,7 +5,7 @@ Large scale (>200h) and publicly available read audio book corpus. This corpus i
 
 ### Dataset Link
 https://persyval-platform.univ-grenoble-alpes.fr/DS91/detaildataset
-https://zenodo.org/record/6482585#.YsmVBUhBxkg
+[NEW!!] https://zenodo.org/record/6482585#.YsmVBUhBxkg
 
 ### Overview of the corpus:
 
